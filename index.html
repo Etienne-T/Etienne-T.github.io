@@ -3,11 +3,12 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Nelson, j'ai besoin d'une startégie</title>
+        <title>Nelson, j'ai besoin d'une stratégie</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link rel="icon" type="image/png" href="favicon.ico">
         <!-- Place favicon.ico in the root directory -->
 
         <link rel="stylesheet" href="css/normalize.css">
@@ -19,19 +20,44 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-      <div class="strategy">
-        <p>
-          Notre stratégie est <span class="adjectif feminin"></span>.
-          Nous allons fournir un effort <span class="adjectif masculin"></span> sur le marché grace à notre <span class="nom singulier"></span> et aux <span class="nom pluriel"></span> afin de construire notre <span class="nom singulier"></span>. En étant à la fois <span class="adjectif feminin"></span> et <span class="adjectif feminin"></span>, notre approche <span class="adjectif feminin"></span> va favoriser notre <span class="nom singulier"></span> dans tout le secteur.
-          Des synergies sur nos <span class="nom pluriel"></span> et notre <span class="nom singulier"></span> vont nous permettre de prendre l'avantage et de nous différencier en devenant <span class="adjectif masculin"></span> et <span class="adjectif masculin"></span> dans le monde.
-          Ces transformations combinées avec notre <span class="nom singulier"></span> <span class="adjectif masculin"></span> et grace aux <span class="nom pluriel"></span> vont décupler notre <span class="nom singulier"></span> au travers des <span class="nom pluriel"></span> et des <span class="nom pluriel"></span>.
-        </p>
-      </div>
-      <div class="powered_by_nelson">
-        <p>Stratégie fournie par Nelson</p>
-        <img class="logo" src="img/logo.png" />
+      <div class="main">
+        <div id="div_entreprise">
+          <h1>Nelson Strategy Bullshit Generator</h1>
+          <form id="entreprise_form" action="">
+            <div>Comment s'appelle votre entreprise ?</div>
+            <input type="text" id="entreprise_name" autofocus >
+            <a id="submit" href="#" class="btn btn-sm animated-button thar-three">
+              Nelson, j'ai besoin d'une stratégie
+            </a>
+          </form>
+        </div>
 
+        <div id="div_strategy">
+          <h2 id="title"></h2>
+          <h3>Stratégie 2017-2018</h3>
+          <p>
+            Notre stratégie est <span class="adjectif feminin"></span>.<br>
+            Nous allons fournir un effort <span class="adjectif masculin"></span> sur le marché grace à notre <span class="nom singulier"></span> et aux <span class="nom pluriel"></span> afin de construire notre <span class="nom singulier"></span>.<br>
+            En étant à la fois <span class="adjectif feminin"></span> et <span class="adjectif feminin"></span>, notre approche <span class="adjectif feminin"></span> va favoriser notre <span class="nom singulier"></span> dans tout le secteur.
+            Des synergies sur nos <span class="nom pluriel"></span> et notre <span class="nom singulier"></span> vont nous permettre de prendre l'avantage et de nous différencier en devenant <span class="adjectif masculin"></span> et <span class="adjectif masculin"></span> dans le monde.
+            Ces transformations combinées avec notre <span class="nom singulier"></span> <span class="adjectif masculin"></span> et grace aux <span class="nom pluriel"></span> vont décupler notre <span class="nom singulier"></span> au travers des <span class="nom pluriel"></span> et des <span class="nom pluriel"></span>.
+          </p>
+          <br><br>
+          <a id="submit2" href="#" class="btn btn-sm animated-button thar-three">
+            Nelson, j'ai besoin d'une autre stratégie
+          </a>
+          <br>
+          <div id="message">
+            * Vous venez d'économisez 50k€ de mission de conseil en stratégie.
+          </div>
+        </div>
       </div>
+
+      <div id="powered_by_nelson">
+        <p>Stratégie fournie par</p>
+        <img class="logo" src="img/logo.png" width="200px" />
+      </div>
+
 
       <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
       <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
@@ -101,7 +127,7 @@
           }
         }
 
-        $(document).ready(() => {
+        function create_strategy(entreprise) {
           let i=0;
           let j=0;
           shuffle(noms);
@@ -124,6 +150,28 @@
             }
             i++;
           });
+        }
+
+        function submitForm(e) {
+          e.preventDefault();
+
+          let entreprise_name = $("#entreprise_name").val();
+          // alert('Vous avez demandé une stratégie pour l\'entreprise '+entreprise_name+'!');
+          create_strategy(entreprise_name);
+          $("#title").text(entreprise_name);
+          $('#div_entreprise').hide();
+          $('#div_strategy').show("slow");
+        }
+
+        $('#entreprise_form').submit(submitForm);
+        $('#submit').click(submitForm);
+        $('#submit2').click(function() {
+          let entreprise_name = $("#entreprise_name").val();
+          create_strategy(entreprise_name);
+        });
+
+        $(document).ready(() => {
+
         })
       </script>
     </body>

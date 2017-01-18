@@ -14,34 +14,59 @@ html {
     color: #222;
     font-size: 1em;
     line-height: 1.4;
+    font-size: 20px;
+    background:#0064ff;
 }
 
-body {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  font-size: 20px;
-  background:#0064ff;
-
+.main {
+  min-width: 100vw;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-div.strategy {
+#div_strategy {
+  display: none;
   max-width: 600px;
   margin-top: 60px;
 }
 
+#powered_by_nelson {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  /*z-index: 1000;*/
+}
+
+#entreprise_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#entreprise_form > div {
+  margin-bottom: 20px;
+  color: white;
+}
+
+#entreprise_name {
+  text-align: center;
+}
+
 p {
-  font-family: serif;
+  /*font-family: serif;*/
   line-height: 150%;
   color: #ffffff;
   text-align: justify;;
 
 }
 
+#message {
+  font-size: 12px;
+}
 /*
  * Remove text-shadow in selection highlight:
  * https://twitter.com/miketaylr/status/12228805301
@@ -305,4 +330,103 @@ textarea {
     h3 {
         page-break-after: avoid;
     }
+}
+
+/* Global Button Styles */
+a.animated-button:link, a.animated-button:visited {
+	position: relative;
+	display: block;
+	margin: 30px auto 0;
+	padding: 14px 15px;
+	color: #ff0041;
+	font-size:14px;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	overflow: hidden;
+	letter-spacing: .08em;
+	border-radius: 0;
+	text-shadow: 0 0 1px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(0, 0, 0, 0.2);
+	-webkit-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	transition: all 1s ease;
+}
+a.animated-button:link:after, a.animated-button:visited:after {
+	content: "";
+	position: absolute;
+	height: 0%;
+	left: 50%;
+	top: 50%;
+	width: 150%;
+	z-index: -1;
+	-webkit-transition: all 0.75s ease 0s;
+	-moz-transition: all 0.75s ease 0s;
+	-o-transition: all 0.75s ease 0s;
+	transition: all 0.75s ease 0s;
+}
+a.animated-button:link:hover, a.animated-button:visited:hover {
+	color: #ff0041;
+	text-shadow: none;
+}
+a.animated-button:link:hover:after, a.animated-button:visited:hover:after {
+	height: 450%;
+}
+a.animated-button:link, a.animated-button:visited {
+	position: relative;
+	display: block;
+	margin: 30px auto 0;
+	padding: 14px 15px;
+	color: #ff0041;
+	font-size:14px;
+	border-radius: 0;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	overflow: hidden;
+	letter-spacing: .08em;
+	text-shadow: 0 0 1px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(0, 0, 0, 0.2);
+	-webkit-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	transition: all 1s ease;
+}
+
+
+/* Thar Buttons */
+
+a.animated-button.thar-three {
+	color: #ff0041;
+	cursor: pointer;
+	display: block;
+	position: relative;
+	border: 2px solid #ff0041;
+	transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+0s;
+}
+a.animated-button.thar-three:hover {
+	color: #000 !important;
+	background-color: transparent;
+	text-shadow: nthree;
+}
+a.animated-button.thar-three:hover:before {
+	left: 0%;
+	right: auto;
+	width: 100%;
+}
+a.animated-button.thar-three:before {
+	display: block;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	height: 100%;
+	width: 0px;
+	z-index: -1;
+	content: '';
+	color: #000 !important;
+	background: #ff0041;
+	transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+0s;
 }

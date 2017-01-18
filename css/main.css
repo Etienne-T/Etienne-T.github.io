@@ -16,6 +16,32 @@ html {
     line-height: 1.4;
 }
 
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-size: 20px;
+  background:#0064ff;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+div.strategy {
+  max-width: 600px;
+  margin-top: 60px;
+}
+
+p {
+  font-family: serif;
+  line-height: 150%;
+  color: #ffffff;
+  text-align: justify;;
+
+}
+
 /*
  * Remove text-shadow in selection highlight:
  * https://twitter.com/miketaylr/status/12228805301
